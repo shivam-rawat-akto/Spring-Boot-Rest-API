@@ -32,12 +32,12 @@ public class UserController {
 		return userService.getUser(userId);
 	}
 	
-	@GetMapping
+	@GetMapping("/all-users")
 	public ResponseEntity<Response> getUsers() {
 		return userService.getUsers();
 	}
 	
-	@PostMapping
+	@PostMapping("/create-user")
 	public ResponseEntity<CreateSuccessResponse> createUser(@RequestBody CreateUserRequest createUserRequest) {
 		validator.validate(createUserRequest);
 		return userService.createUser(createUserRequest);
